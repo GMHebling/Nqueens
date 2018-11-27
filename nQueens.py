@@ -48,7 +48,6 @@ def negative_diagonal(board):
 
 def check_board(diag_1, diag_2):
 	#verifica valores repetidos nas diagonais 
-	#verifica se o posicionamento das rainhas produz uma solucao valida 
 	n = len(diag_1)
 	var_obj = 0
 	for index1 in range(n-1):
@@ -85,7 +84,7 @@ def play_game(N):
 		else:
 			break
 
-
+    #verifica se o posicionamento das rainhas produz uma solucao valida 
 	if var == 0 and iter != max_iter-1:
 		print("{} queens problem solved in {} iterations".format(N, iter))
 		print_board(new_board)
