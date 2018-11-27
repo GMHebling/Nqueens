@@ -1,3 +1,9 @@
+#Criado em 27/11
+#Problema das N rainhas
+
+#Representacao LAGUNA: board = [c1, c2, c3, c4]
+#linha i => coluna board[i]
+
 from random import randint
 
 max_iter = 1000
