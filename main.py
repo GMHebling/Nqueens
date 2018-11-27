@@ -1,6 +1,6 @@
 from random import randint
 N = 10
-max_iter = 50000
+max_iter = 1000
 #Criado em 27/11
 #Problema das N rainhas
 
