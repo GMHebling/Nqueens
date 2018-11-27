@@ -63,12 +63,12 @@ def check_board(diag_1, diag_2):
 def print_board(board):
 	#imprime o resultado no terminal
 	string = []
-	for index in range(len(board)): string.append("=")
+	for index in range(len(board)): string.append('=')
 	for index in range(len(board)):
 		new_string = string
-		new_string[board[index]] = "@"
+		new_string[board[index]] = '@'
 		print(new_string)
-		new_string[board[index]] = "="
+		new_string[board[index]] = '='
 		
 def play_game(N):
 	#funcao principal
