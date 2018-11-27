@@ -1,6 +1,6 @@
 from random import randint
-N = 8
-max_iter = 1000
+N = 10
+max_iter = 50000
 #Criado em 27/11
 #Problema das N rainhas
 
@@ -63,26 +63,28 @@ def print_board(board):
 		print(new_string)
 		new_string[board[index]] = "="
 		
+def play_game(N):
+	new_board = create_board(N)
+	new_board = shuffle_board(new_board, N)
 
-new_board = create_board(N)
-new_board = shuffle_board(new_board, N)
+	for iter in range(max_iter):
+		d1 = positive_diagonal(new_board)
+		d2 = negative_diagonal(new_board)
+		var =  check_board(d1,d2)
+		if var != 0:
+			new_board = shuffle_board(new_board,N)
+		else:
+			break
 
-for iter in range(max_iter):
-	d1 = positive_diagonal(new_board)
-	d2 = negative_diagonal(new_board)
-	var =  check_board(d1,d2)
-	if var != 0:
-		new_board = shuffle_board(new_board,N)
+
+	if var == 0 and iter != max_iter-1:
+		print("{} queens problem solved in {} iterations".format(N, iter))
+		print_board(new_board)
 	else:
-		break
+		print("Solution not found!")
 
-if var == 0 and iter != 999:
-	print("Solution found in {} iterations".format(iter))
-	print_board(new_board)
-else:
-	print("Solution not found!")
-
-
+for index in range(4,N):
+	play_game(index)
 
 
 
