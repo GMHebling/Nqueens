@@ -6,7 +6,7 @@ O problema consiste em dispor N rainhas em um tabuleiro de xadrez de dimensão N
 
 @ : posição da rainha
 
-9 queens problem solved in 357 iterations
+9 queens problem solved in 357 iterations  
 ['=', '=', '=', '@', '=', '=', '=', '=', '=']  
 ['=', '=', '=', '=', '=', '=', '@', '=', '=']  
 ['=', '=', '=', '=', '@', '=', '=', '=', '=']  
