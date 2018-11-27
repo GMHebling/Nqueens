@@ -17,11 +17,13 @@ def create_board(n):
 
 def shuffle_board(board, n):
 	#realiza n permutacoes nas posicoes das rainhas
-	for index in range(n):
-		new_index = randint(0,n-1)
-		old_value = board[index]
-		board[index] = board[new_index]
-		board[new_index] = old_value
+	for _ in range(n):
+		new_index_i = randint(0,n-1)
+		new_index_j = randint(0,n-1)
+		if new_index_i != new_index_j:
+			old_value = board[new_index_i]
+			board[new_index_i] = board[new_index_j]
+			board[new_index_j] = old_value
 	return board	
 
 def positive_diagonal(board):
