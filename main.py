@@ -1,5 +1,6 @@
 from random import randint
-N = 4
+N = 8
+max_iter = 100
 #Criado em 27/11
 #Problema das N rainhas
 
@@ -40,6 +41,43 @@ def negative_diagonal(board):
 		neg_diag.append(value)
 	return neg_diag
 
+def check_board(diag_1, diag_2):
+	n = len(diag_1)
+	var_obj = 0
+	for index1 in range(n-1):
+		value = diag_1[index1]
+		value2 = diag_2[index1]
+		for index2 in range(index1+1,n):
+			next_value = diag_1[index2]
+			next_value2 = diag_2[index2]
+			if next_value == value or next_value2 == value2:
+				var_obj = var_obj + 1
+	return var_obj
+
+def print_board(board):
+	string = []
+	for index in range(len(board)): string.append("=")
+	for index in range(len(board)):
+		new_string = string
+		new_string[board[index]] = "@"
+		print(new_string)
+		new_string[board[index]] = "="
+		
+
 new_board = create_board(N)
 new_board = shuffle_board(new_board, N)
+
+for iter in range(max_iter):
+	d1 = positive_diagonal(new_board)
+	d2 = negative_diagonal(new_board)
+	var =  check_board(d1,d2)
+	if var != 0:
+		new_board = shuffle_board(new_board,N)
+	else:
+		break
+
+print("Solution found in {} iterations".format(iter))
+print_board(new_board)
+
+
 
