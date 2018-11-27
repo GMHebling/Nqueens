@@ -1,6 +1,6 @@
 from random import randint
 N = 8
-max_iter = 100
+max_iter = 1000
 #Criado em 27/11
 #Problema das N rainhas
 
@@ -76,8 +76,13 @@ for iter in range(max_iter):
 	else:
 		break
 
-print("Solution found in {} iterations".format(iter))
-print_board(new_board)
+if var == 0 and iter != 999:
+	print("Solution found in {} iterations".format(iter))
+	print_board(new_board)
+else:
+	print("Solution not found!")
+
+
 
 
 
